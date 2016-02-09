@@ -33,6 +33,7 @@
 #include "plugins/OSXOutputPlugin.hxx"
 #include "plugins/PipeOutputPlugin.hxx"
 #include "plugins/PulseOutputPlugin.hxx"
+#include "plugins/GSTOutputPlugin.hxx"
 #include "plugins/RecorderOutputPlugin.hxx"
 #include "plugins/RoarOutputPlugin.hxx"
 #include "plugins/ShoutOutputPlugin.hxx"
@@ -85,6 +86,9 @@ const AudioOutputPlugin *const audio_output_plugins[] = {
 #endif
 #ifdef ENABLE_PULSE
 	&pulse_output_plugin,
+#endif
+#ifdef ENABLE_GSTREAMER
+  &gst_output_plugin,
 #endif
 #ifdef ENABLE_JACK
 	&jack_output_plugin,

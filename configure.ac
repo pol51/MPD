@@ -1227,6 +1227,10 @@ dnl -------------------------------- PulseAudio -------------------------------
 MPD_ENABLE_AUTO_PKG(pulse, PULSE, [libpulse >= 0.9.16],
 	[PulseAudio output plugin], [libpulse not found])
 
+dnl --------------------------------- GStreamer ---------------------------------
+MPD_ENABLE_AUTO_PKG(gstreamer, GSTREAMER, [gstreamer-1.0],
+  [GStreamer output plugin], [gstreamer not found])
+
 dnl --------------------------------- Recorder --------------------------------
 if test x$enable_recorder_output = xauto; then
 	# handle recorder auto-detection: disable if no encoder is
@@ -1466,6 +1470,7 @@ results(osx, [OS X])
 results(pipe_output, [Pipeline])
 printf '\n\t'
 results(pulse, [PulseAudio])
+results(gstreamer, [GStreamer])
 results(roar,[ROAR])
 results(shout, [SHOUTcast])
 results(solaris_output, [Solaris])

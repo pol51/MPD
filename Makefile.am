@@ -1502,6 +1502,15 @@ liboutput_plugins_a_SOURCES += \
 libmixer_plugins_a_SOURCES += src/mixer/plugins/WinmmMixerPlugin.cxx
 endif
 
+if ENABLE_GSTREAMER
+liboutput_plugins_a_SOURCES += \
+  src/output/plugins/GSTOutputPlugin.cxx \
+  src/output/plugins/GSTOutputPlugin.hxx \
+  src/output/plugins/GSTOutput.cxx \
+  src/output/plugins/GSTOutput.hxx
+liboutput_plugins_a_CPPFLAGS += $(GSTREAMER_CFLAGS)
+OUTPUT_LIBS += $(GSTREAMER_LIBS) -lgstapp-1.0
+endif
 
 #
 # Playlist plugins
